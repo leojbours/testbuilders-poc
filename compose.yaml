@@ -1,0 +1,9 @@
+services:
+  dbservice:
+    container_name: testcontainers-poc
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: testcontainers-poc
+      MYSQL_ROOT_PASSWORD: root

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: testcontainers-poc
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:3306}/${DATABASE_NAME:testcontainers-poc}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:root}
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/schema.sql
+  jpa:
+    hibernate:
+      ddl-auto: none
+  docker:
+    compose:
+      stop:
+        command: down
